@@ -14,7 +14,6 @@ class Genetic:
         - Chromosomes are represented as an array of 0 and 1 with the same length as the set.
         (0 means the member is not included in the subset, 1 means the member is included in the subset)
 
-        Feel free to add any other function you need.
     """
 
     def __init__(self):
@@ -35,10 +34,7 @@ class Genetic:
         """
 
         initial_population = []
-       # for _ in range(0, n):
-       #     initial_population.append(''.join(random.choice(["0", "1"]) for _ in range(k)))
-       # return initial_population
-
+       
         for i in range(n):
             population = []
             for j in range(k):
@@ -60,18 +56,7 @@ class Genetic:
         Outputs:
         - sum of the chromosome
         """
-       # sum = 0
-       # for index, entry in enumerate(S):
-       #     if entry == "1":
-       #         sum += chromosome[index]
-       # return sum#todo: need abs??
-
-        sum = 0
-        #for x in range(len(S)):
-        #    if chromosome[x] == 1:
-        #        sum += S[x]
-        ##
-        #return sum
+       
         return np.dot(S, chromosome)
         pass
 
@@ -278,7 +263,7 @@ class Genetic:
 
         initial_population = self.generate_initial_population(population_size, len(S))
 
-        # YOUR CODE HERE
+       
 
         for i in tqdm(range(num_generations)):
             new_population = []
@@ -318,9 +303,6 @@ class Genetic:
                 best_cost = new_cost
                 best_solution = new_state
             initial_population = new_population
-
-
-            # YOUR CODE HERE
 
             records.append({'iteration': i, 'best_cost': best_cost,
                            'best_solution': best_solution})  # DO NOT REMOVE THIS LINE
